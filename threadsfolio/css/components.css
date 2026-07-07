@@ -999,6 +999,56 @@
   gap: 4px;
 }
 
+.thread-task__arch {
+  margin: 10px 0;
+  padding: 10px 12px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+}
+
+.thread-task__arch-heading {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.thread-task__arch-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+}
+
+.arch-node {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-secondary);
+}
+
+.arch-arrow {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.thread-task__lessons {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
+}
+
+.thread-task__lessons-heading {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
 /* ─── Continue Thread ─── */
 .continue-thread {
   display: none !important;
@@ -1283,6 +1333,14 @@
 .cert-card p {
   font-size: 12px;
   color: var(--text-tertiary);
+  margin-bottom: 8px;
+}
+
+.cert-card__learnings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
 }
 
 /* ─── Contact Links ─── */
@@ -1409,6 +1467,34 @@
   gap: 6px;
   font-size: 14px;
   color: var(--text-secondary);
+}
+
+.feed-footer__roles {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.feed-footer__roles-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.feed-footer__roles-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.contact__cta {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .feed-footer__text svg {

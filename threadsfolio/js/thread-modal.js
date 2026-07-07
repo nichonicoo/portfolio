@@ -28,6 +28,25 @@
                  </div>
                </div>`
             : '';
+
+          const arch = task.architecture
+            ? `<div class="thread-task__arch">
+                 <div class="thread-task__arch-heading">🏗️ Architecture Flow</div>
+                 <div class="thread-task__arch-flow">
+                   ${task.architecture.map((a) => `<span class="arch-node">${a}</span>`).join('<span class="arch-arrow">→</span>')}
+                 </div>
+               </div>`
+            : '';
+
+          const lessons = task.lessons
+            ? `<div class="thread-task__lessons">
+                 <div class="thread-task__lessons-heading">📖 Lessons Learned</div>
+                 <ul class="thread-task__details">
+                   ${task.lessons.map((l) => `<li>${l}</li>`).join('')}
+                 </ul>
+               </div>`
+            : '';
+
           return `
       <div class="thread-task">
         <div class="thread-task__line">
@@ -40,6 +59,7 @@
             <span class="thread-task__type">${task.type}</span>
           </div>
           <p class="thread-task__desc">${task.description}</p>
+          ${arch}
           ${gallery}
           <ul class="thread-task__details">
             ${task.details.map((d) => `<li>${d}</li>`).join('')}
@@ -47,6 +67,7 @@
           <div class="thread-task__skills">
             ${task.skills.map((s) => `<span class="chip chip--sm">${s}</span>`).join('')}
           </div>
+          ${lessons}
         </div>
       </div>`;
         }
