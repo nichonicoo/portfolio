@@ -1,0 +1,234 @@
+/* ═══════════════════════════════════════
+   RESPONSIVE.CSS — Breakpoints & Mobile
+   ═══════════════════════════════════════ */
+
+/* ─── Tablet (≤ 768px) ─── */
+@media (max-width: 768px) {
+  .feed {
+    padding: 0 12px 60px;
+  }
+
+  .post {
+    padding: 16px 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .post__actions {
+    gap: 0;
+  }
+
+  .post__action {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .post__action span {
+    font-size: 11px;
+  }
+
+  /* Profile */
+  .profile__header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile__stats {
+    justify-content: center;
+  }
+
+  .profile__actions {
+    justify-content: center;
+  }
+
+  .profile__social {
+    justify-content: center;
+  }
+
+  .profile__link {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .post__hero-meta {
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .theme-toggle {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .float-resume {
+    bottom: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    justify-content: center;
+    padding: 0;
+  }
+
+  .float-resume span {
+    display: none;
+  }
+}
+
+/* ─── Mobile (≤ 480px) ─── */
+@media (max-width: 480px) {
+  .feed {
+    padding: 0 8px 40px;
+  }
+
+  .post {
+    padding: 16px 16px;
+    border-radius: var(--radius-sm);
+    margin-top: 14px;
+  }
+
+  .post__avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .post__name {
+    font-size: 13px;
+  }
+
+  .post__handle {
+    font-size: 12px;
+  }
+
+  .post__content p {
+    font-size: 14px;
+  }
+
+  .post__action {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+
+  .post__action svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .post__action span {
+    font-size: 10px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .thread__body p {
+    font-size: 13px;
+  }
+
+  .thread__name {
+    font-size: 12px;
+  }
+
+  .project-card__cover {
+    height: 80px;
+  }
+
+  .continue-thread__btn {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+
+  .contact-link {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .reply__body p {
+    font-size: 13px;
+  }
+
+  .cert-card {
+    padding: 14px;
+  }
+
+  .cert-card h4 {
+    font-size: 12px;
+  }
+
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .theme-toggle svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* ─── Small Mobile (≤ 360px) ─── */
+@media (max-width: 360px) {
+  .post {
+    padding: 12px 10px;
+  }
+
+  .post__actions {
+    flex-wrap: wrap;
+  }
+
+  .post__action {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* ─── Dark Mode Transition ─── */
+@media (prefers-reduced-motion: no-preference) {
+  .post,
+  .continue-thread__btn,
+  .project-card,
+  .cert-card,
+  .contact-link {
+    transition: all var(--transition-base);
+  }
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .gsap-hidden,
+  .gsap-hidden-left,
+  .gsap-hidden-right,
+  .gsap-hidden-scale {
+    opacity: 1;
+    transform: none;
+  }
+}
