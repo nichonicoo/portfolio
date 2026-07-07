@@ -29,24 +29,6 @@
                </div>`
             : '';
 
-          const arch = task.architecture
-            ? `<div class="thread-task__arch">
-                 <div class="thread-task__arch-heading">🏗️ Architecture Flow</div>
-                 <div class="thread-task__arch-flow">
-                   ${task.architecture.map((a) => `<span class="arch-node">${a}</span>`).join('<span class="arch-arrow">→</span>')}
-                 </div>
-               </div>`
-            : '';
-
-          const lessons = task.lessons
-            ? `<div class="thread-task__lessons">
-                 <div class="thread-task__lessons-heading">📖 Lessons Learned</div>
-                 <ul class="thread-task__details">
-                   ${task.lessons.map((l) => `<li>${l}</li>`).join('')}
-                 </ul>
-               </div>`
-            : '';
-
           return `
       <div class="thread-task">
         <div class="thread-task__line">
@@ -59,7 +41,6 @@
             <span class="thread-task__type">${task.type}</span>
           </div>
           <p class="thread-task__desc">${task.description}</p>
-          ${arch}
           ${gallery}
           <ul class="thread-task__details">
             ${task.details.map((d) => `<li>${d}</li>`).join('')}
@@ -67,17 +48,21 @@
           <div class="thread-task__skills">
             ${task.skills.map((s) => `<span class="chip chip--sm">${s}</span>`).join('')}
           </div>
-          ${lessons}
         </div>
       </div>`;
         }
       )
       .join('');
 
+    const logoMap = {
+      'JAPFA': 'assets/jpfa.png',
+    };
+    const logo = logoMap[data.company] || 'assets/avatar.svg';
+
     return `
       <div class="thread-detail">
         <div class="thread-detail__header">
-          <img src="assets/avatar.svg" alt="Nicholas" class="thread-detail__avatar" />
+          <img src="${logo}" alt="${data.company}" class="thread-detail__avatar" />
           <div class="thread-detail__info">
             <h2>${data.role}</h2>
             <p>${data.company} · ${data.period}</p>
@@ -130,8 +115,7 @@
 
   // ─── Listen for clicks on thread open buttons & clickable threads ───
   function initThreadTriggers() {
-    // Click on "Buka thread" button
-    document.querySelectorAll('.thread__open-btn').forEach((btn) => {
+    document.querySelectorAll('.thread__open-btn, .sidebar__pinned-btn').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const id = btn.getAttribute('data-thread-id');
@@ -139,7 +123,6 @@
       });
     });
 
-    // Click on clickable thread card
     document.querySelectorAll('.thread--clickable').forEach((el) => {
       el.addEventListener('click', () => {
         const id = el.getAttribute('data-thread-id');
@@ -148,7 +131,6 @@
     });
   }
 
-  // Init on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initThreadTriggers);
   } else {

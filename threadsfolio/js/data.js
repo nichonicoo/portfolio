@@ -9,7 +9,7 @@ const portfolioData = {
     bio: 'Final-year Computer Science student | Software Engineering Enthusiast',
     followers: 127,
     following: 89,
-    avatar: 'assets/avatar.svg',
+    avatar: 'assets/foto_pas.jpeg',
   },
 
   about: {
@@ -24,6 +24,7 @@ const portfolioData = {
     {
       id: 'internship-japfa',
       role: 'Full Stack Developer Intern',
+      images: 'assets/jpfa.png',
       company: 'JAPFA',
       period: 'Feb 2025 — Feb 2026',
       description: 'Interned at JAPFA, contributing to internal system development — PDP policies, overtime calculation logic, and the E-OT mobile application.',

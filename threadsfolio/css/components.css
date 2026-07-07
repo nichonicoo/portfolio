@@ -148,6 +148,7 @@
   object-fit: cover;
   background: var(--bg-tertiary);
   flex-shrink: 0;
+  margin-top: 8px;
 }
 
 .profile__info {
@@ -895,7 +896,7 @@
   font-size: 14px;
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 /* ─── Thread Detail Task ─── */
@@ -1140,6 +1141,19 @@
 .project-card__body {
   padding: 14px 16px;
   overflow: hidden;
+}
+
+.project-card__category {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--accent-light);
+  color: var(--accent);
+  margin-bottom: 6px;
 }
 
 .project-card__title {
